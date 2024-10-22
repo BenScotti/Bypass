@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvlws51if3be5"]
+
+[ext_resource type="PackedScene" uid="uid://unnvpatrj2ln" path="res://Scenes/board.tscn" id="1_stleu"]
+[ext_resource type="Texture2D" uid="uid://cb32gflwygdv4" path="res://Assets/bypassTileset.png" id="2_cd7x5"]
+[ext_resource type="PackedScene" uid="uid://b5ih7kheqtqpc" path="res://Scenes/piece.tscn" id="2_j07g0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dn5g"]
+texture = ExtResource("2_cd7x5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_13tl8"]
+sources/0 = SubResource("TileSetAtlasSource_0dn5g")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ems2k"]
+texture = ExtResource("2_cd7x5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jmfay"]
+sources/0 = SubResource("TileSetAtlasSource_ems2k")
+
+[node name="Game" type="Node2D"]
+texture_filter = 1
+
+[node name="Board" parent="." instance=ExtResource("1_stleu")]
+
+[node name="player1Pieces" type="Node" parent="."]
+
+[node name="b1" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, -96)
+
+[node name="b2" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, -80)
+
+[node name="b3" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, -64)
+
+[node name="b4" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, -48)
+
+[node name="b5" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, -32)
+
+[node name="b6" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, 64)
+
+[node name="b7" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, 80)
+
+[node name="b8" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, 96)
+
+[node name="b9" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, 112)
+
+[node name="b10" parent="player1Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, 128)
+
+[node name="player2Pieces" type="Node" parent="."]
+
+[node name="w1" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, -96)
+
+[node name="w2" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, -80)
+
+[node name="w3" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, -64)
+
+[node name="w4" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, -48)
+
+[node name="w5" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(0, -32)
+
+[node name="w6" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, 64)
+
+[node name="w7" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, 80)
+
+[node name="w8" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, 96)
+
+[node name="w9" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, 112)
+
+[node name="w10" parent="player2Pieces" instance=ExtResource("2_j07g0")]
+position = Vector2(16, 128)
+
+[node name="p1Cube" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-150, 0)
+tile_set = SubResource("TileSet_13tl8")
+format = 2
+layer_0/tile_data = PackedInt32Array(65534, 0, 0, 0, 196608, 0, 65535, 65536, 0, 65533, 65536, 1, -2, 0, 1, 131070, 131072, 0)
+
+[node name="p2Cube" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(150, 0)
+tile_set = SubResource("TileSet_jmfay")
+format = 2
+layer_0/tile_data = PackedInt32Array(1, 131072, 1, 65535, 65536, 2, 0, 196608, 1, -65535, 131072, 2, 65537, 0, 2, 2, 196608, 2)
